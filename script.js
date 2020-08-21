@@ -1,5 +1,3 @@
-/* JavaScript Rock Paper Scissors Project
-Developer: Ivan van der Merwe */
 
 const playerChoiceRock = document.querySelector('#rock');
 const playerChoicePaper = document.querySelector('#paper');
