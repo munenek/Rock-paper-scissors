@@ -1,15 +1,14 @@
-<h1>Choose your Weapon: Rock, Paper, Scissors</h1>
-<br />
+/* JavaScript Rock Paper Scissors Project
+Developer: Ivan van der Merwe */
 
-From The Odin Project's <a href="http://www.theodinproject.com">Curriculum</a> <br /><br />
+const playerChoiceRock = document.querySelector('#rock');
+const playerChoicePaper = document.querySelector('#paper');
+const playerChoiceScissors = document.querySelector('#scissors');
 
+const paraUserResult = document.querySelector('#userResult');
+const paraComputerResult = document.querySelector('#computerResult');
 
-<img src="https://media.giphy.com/media/rfp9Znzj0NyWk/giphy.gif">
-
-<h2>My Solution</h2>
-<h3>Generate Random Computer Choice</h3>
-
-```javascript
+// Generate random Computer selection
 let computerSelection = () => {
   let randomCount = Math.random();
 
@@ -24,11 +23,9 @@ let computerSelection = () => {
     return 'scissors';
   }
 }
-```
 
-<h3>Compare User and Computer choice</h3>
 
-```javascript
+// Compare the player choice versus the computer choice and return the result
 let playRound = (playerSelection, computerSelection) => {
   if (playerSelection === computerSelection) {
     return 'It is a tie';
@@ -46,12 +43,19 @@ let playRound = (playerSelection, computerSelection) => {
     return 'You lose!';
   }
 }
-```
 
-<h2>Demo</h2>
-Link to Choose You Weapon Game --> <a href="https://ivanv257.github.io/Rock-Paper-Scissors-JavaScript-Project/">Play Now</a>
+// Event listener added for button selection
 
+    playerChoiceRock.addEventListener('click', () => {
+      paraUserResult.textContent = playRound('rock', computerSelection());
+      })
 
-
+    playerChoicePaper.addEventListener('click', () => {
+      paraUserResult.textContent = playRound('paper', computerSelection());
+    })
+   
+    playerChoiceScissors.addEventListener('click', () => {
+      paraUserResult.textContent = playRound('scissors', computerSelection());
+    })
 
 
